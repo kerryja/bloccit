@@ -29,9 +29,9 @@ describe("routes : static", () => {
 				done();
 			})
 		})
-	})*/
+	})
 
-	/*describe("GET /marco", () => {
+	describe("GET /marco", () => {
 
 		it("should return status code 200", (done) => {
 
