@@ -57,8 +57,8 @@ describe("routes : topics", () => {
 		const options = {
 			url: `${base}create`,
 			form: {
-				title: "animals",
-				description: "What's your favorite animal?"
+				title: "blink-182 songs",
+				description: "What's your favorite blink-182 song?"
 			}
 		};
 
@@ -67,17 +67,17 @@ describe("routes : topics", () => {
 			request.post(options,
 
 				(err, res, body) => {
-					Topic.findOne({ where: { title: "animals" } })
-						.then((topic) => {
-							expect(res.statusCode).toBe(303);
-							expect(topic.title).toBe("animals");
-							expect(topic.description).toBe("What's your favorite animal?");
-							done();
-						})
-						.catch((err) => {
-							console.log(err);
-							done();
-						});
+					Topic.findOne({where: {title: "blink-182 songs"}})
+					.then((topic) => {
+						expect(res.statusCode).toBe(303);
+						expect(topic.title).toBe("blink-182 songs");
+						expect(topic.description).toBe("What's your favorite blink-182 song?");
+						done();
+					})
+					.catch((err) => {
+						console.log(err);
+						done();
+					});
 				}
 			);
 		});
@@ -134,30 +134,25 @@ describe("routes : topics", () => {
 	});
 
 	describe("POST /topics/:id/update", () => {
+    it("should update the topic with the given values", done => {
+      const options = {
+        url: `${base}${this.topic.id}/update`,
+        form: {
+          title: "JS Frameworks",
+          description: "There are a lot of them"
+        }
+      };
 
-		it("should update the topic with the given values", (done) => {
-			const options = {
-				url: `${base}${this.topic.id}/update`, 
-				form: {
-					title: "JavaScript Frameworks",
-					description: "There are a lot of them"
-				}
-			};
+      request.post(options, (err, res, body) => {
+        expect(err).toBeNull();
 
-			request.post(options,
-				(err, res, body) => {
-
-					expect(err).toBeNull();
-
-					Topic.findOne({
-						where: { id: this.topic.id }
-					})
-						.then((topic) => {
-							expect(topic.title).toBe("JavaScript Frameworks");
-							done();
-						});
-				});
-		});
-	});
+        Topic.findOne({
+          where: { id: this.topic.id }
+        }).then(topic => {
+          expect(topic.title).toBe("JS Frameworks");
+          done();
+        });
+      });
+    });
+  });
 });
-

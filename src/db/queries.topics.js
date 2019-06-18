@@ -13,7 +13,7 @@ module.exports = {
 			})
 	},
 	addTopic(newTopic, callback) {
-		return Topic.create({
+		return Topic.create({  //should newTopic be there instead?
 			title: newTopic.title,
 			description: newTopic.description
 		})
@@ -45,21 +45,20 @@ module.exports = {
 			})
 	},
 	updateTopic(id, updatedTopic, callback) {
-		return Topic.findByPk(id) //findById has been deprecated
-			.then((topic) => {
-				if (!topic) {
-					return callback("Topic not found");
-				}
-
-				topic.update(updatedTopic, {
-					fields: Object.keys(updatedTopic) //issue
+		return Topic.findByPk(id).then(topic => {
+			if (!topic) {
+				return callback("Topic not found");
+			}
+			topic
+				.update(updatedTopic, {
+					fields: Object.keys(updatedTopic)
 				})
-					.then(() => {
-						callback(null, topic);
-					})
-					.catch((err) => {
-						callback(err);
-					});
-			});
+				.then(() => {
+					callback(null, topic);
+				})
+				.catch(err => {
+					callback(err);
+				});
+		});
 	}
 }	
