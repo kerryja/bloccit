@@ -1,4 +1,4 @@
-/*const express = require ("express");
+const express = require ("express");
 const router = express.Router();
 
 const advertisementController = require ("../controllers/advertisementController");
@@ -11,4 +11,4 @@ router.post("/advertisements/:id/destroy", advertisementController.destroy);
 router.get("/advertisements/:id/edit", advertisementController.edit);
 router.post("/advertisements/:id/update", advertisementController.update);
 
-module.exports = router;*/
+module.exports = router;
