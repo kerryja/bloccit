@@ -2,6 +2,7 @@ const request = require("request");
 const server = require("../../src/server");
 const base = "http://localhost:3000/";
 const base2 = "http://localhost:3000/about";
+const base3 = "http://localhost:3000/advertisement";
 
 describe("routes : static", () => {
 
@@ -19,7 +20,7 @@ describe("routes : static", () => {
 
 	});
 
-	/*describe("GET /about", () => {
+	describe("GET /about", () => {
 
 		it("should return status code 200 and display 'About Us' in the body", (done) => {
 
@@ -30,5 +31,5 @@ describe("routes : static", () => {
 				done();
 			})
 		})
-	})*/
+	})
 });
