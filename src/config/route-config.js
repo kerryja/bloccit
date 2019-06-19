@@ -4,7 +4,6 @@ module.exports = {
 		const topicRoutes = require("../routes/topics");
 
 		app.use(staticRoutes);
-		const topicRoutes = require("../routes/topics");
 		app.use(topicRoutes);
 	}
 }
