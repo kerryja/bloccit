@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 module.exports = (sequelize, DataTypes) => {
-  var Banner = sequelize.define('Banner', {
+  var Banner = sequelize.define("Banner", {
     source: DataTypes.STRING,
 		description: DataTypes.STRING,
 		topicId: {
@@ -12,8 +12,9 @@ module.exports = (sequelize, DataTypes) => {
 				as: "topicId",
 			}
 		}
-
-  }, {});
+	},
+	{}
+	);
   Banner.associate = function(models) {
 		// associations can be defined here
 		Banner.belongsTo(models.Topic, {
