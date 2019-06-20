@@ -20,7 +20,6 @@ describe("Post", () => {
 					Post.create({
 						title: "My first visit to Proxima Centauri b",
 						body: "I saw some rocks.",
-
 						topicId: this.topic.id
 					})
 						.then((post) => {
@@ -46,7 +45,6 @@ describe("Post", () => {
 				topicId: this.topic.id
 			})
 				.then((post) => {
-
 
 					expect(post.title).toBe("Pros of Cryosleep during the long journey");
 					expect(post.body).toBe("1. Not having to answer the 'are we there yet?' question.");
@@ -91,18 +89,18 @@ describe("Post", () => {
 				title: "Challenges of interstellar travel",
 				description: "1. The Wi-Fi is terrible"
 			})
-			.then((newTopic) => {
+				.then((newTopic) => {
 
-				expect(this.post.topicId).toBe(this.topic.id);
+					expect(this.post.topicId).toBe(this.topic.id);
 
-				this.post.setTopic(newTopic)
-				.then((post) => {
+					this.post.setTopic(newTopic)
+						.then((post) => {
 
-					expect(post.topicId).toBe(newTopic.id);
-					done();
+							expect(post.topicId).toBe(newTopic.id);
+							done();
 
-				});
-			})
+						});
+				})
 		});
 
 	});
@@ -112,10 +110,10 @@ describe("Post", () => {
 		it("should return the associated topic", (done) => {
 
 			this.post.getTopic()
-			.then((associatedTopic) => {
-				expect(associatedTopic.title).toBe("Expeditions to Alpha Centauri");
-				done();
-			});
+				.then((associatedTopic) => {
+					expect(associatedTopic.title).toBe("Expeditions to Alpha Centauri");
+					done();
+				});
 
 		});
 
