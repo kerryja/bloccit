@@ -4,7 +4,7 @@ const viewsFolder = path.join(__dirname, "..", "views");
 const bodyParser = require("body-parser");
 const expressValidator = require("express-validator");
 const session = require("express-session");
-const flash = require("express-flash");*/
+const flash = require("express-flash");
 
 module.exports = {
 	init(app, express) {
