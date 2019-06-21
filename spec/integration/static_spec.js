@@ -19,7 +19,7 @@ describe("routes : static", () => {
 
 	});
 
-	/*describe("GET /about", () => {
+	describe("GET /about", () => {
 
 		it("should return status code 200 and display 'About Us' in the body", (done) => {
 
@@ -30,5 +30,5 @@ describe("routes : static", () => {
 				done();
 			})
 		})
-	})*/
+	})
 });
