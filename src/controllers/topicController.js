@@ -17,7 +17,7 @@ module.exports = {
 		if (authorized) {
 			res.render("topics/new");
 		} else {
-			req.flash("notice", "you are not authorized to do that");
+			req.flash("notice", "You are not authorized to do that");
 			res.redirect("/topics");
 		}
 	},
@@ -37,7 +37,7 @@ module.exports = {
 				}
 			});
 		} else {
-			req.flash("notice", "you are not authorized to do that");
+			req.flash("notice", "You are not authorized to do that");
 			res.redirect("/topics");
 		}
 	},
@@ -76,7 +76,6 @@ module.exports = {
 		});
 	},
 	update(req, res, next) {
-
 		topicQueries.updateTopic(req, req.body, (err, topic) => {
 			if (err || topic == null) {
 				res.redirect(401, `/topics/${req.params.id}/edit`);
