@@ -1,3 +1,76 @@
 body {
 	padding-top: 100px;
 }
+
+.card {
+	padding: 15px;
+}
+
+.orange {
+	background-color: #EF5455;
+	color: #2B3252;
+}
+
+.purple {
+ background-color: #2B3252;
+ color: #FAD744;
+}
+
+.yellow {
+	background-color: #FAD744;
+	color: #EF5455;
+}
+
+.heading {
+	font-family: 'Staatliches', cursive;
+}
+
+.paragraph-text {
+	font-family: 'Lato', sans-serif;
+}
+
+.lead {
+	font-size: 25px;
+}
+
+.card-title {
+	font-size: 40px;
+}
+
+.card-text {
+	font-size: 20px;
+}
+
+.icons {
+	font-size: 45px;
+}
+
+.navbar {
+	background-color: #2B3252;
+}
+
+.navbar a {
+	color: #FAD744;
+	font-family: 'Lato', sans-serif;
+}
+
+h1 {
+	color: #EF5455;
+}
+
+h2 {
+	color: #2B3252;
+}
+
+h4 {
+	color: #2B3252;
+	font-family: 'Lato', sans-serif;
+}
+
+h6 {
+	color: #2B3252;
+}
+
+.text-muted {
+	font-size: 15px;
+}
