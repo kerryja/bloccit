@@ -14,7 +14,7 @@
 
 		<div style="display: flex; align-items:center;">
 			<% if(currentUser) { %>
-				<% include ../votes/voting.ejs %>
+			<% include ../votes/voting.ejs %>
 			<% } %>
 			<h2><%= post.title %></h2>
 		</div>
@@ -23,7 +23,11 @@
 		<form style="display:initial" action="/topics/<%= post.topicId %>/posts/<%= post.id %>/destroy" method="post">
 			<button type="submit" class="btn orange">Delete</button>
 		</form>
-		<h5><%= post.body %></h5>
+
+		<% if(currentUser) { %>
+		<% include ../favorites/favoriting.ejs %>
+		<% } %>
+		<p><%= post.body %></p>
 
 		<section id="comment-form">
 
