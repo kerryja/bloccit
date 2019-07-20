@@ -1,7 +1,16 @@
-'use strict';
+"use strict";
+
+var options = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric"
+};
+var today = new Date();
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Comments', {
+    return queryInterface.createTable("Comments", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -9,40 +18,40 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       body: {
-				type: Sequelize.STRING, 
-				allowNull: false
-			},
-			postId: {
-				type: Sequelize.INTEGER,
-				onDelete: "CASCADE",
-				allowNull: false,
-				references: {
-					model: "Posts",
-					key: "id",
-					as: "postId"
-				}
-			},
-			userId: {
-				type: Sequelize.INTEGER,
-				onDelete: "CASCADE",
-				allowNull: false,
-				references: {
-					model: "Users",
-					key: "id",
-					as: "userId"
-				}
-			},
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      postId: {
+        type: Sequelize.INTEGER,
+        onDelete: "CASCADE",
+        allowNull: false,
+        references: {
+          model: "Posts",
+          key: "id",
+          as: "postId"
+        }
+      },
+      userId: {
+        type: Sequelize.INTEGER,
+        onDelete: "CASCADE",
+        allowNull: false,
+        references: {
+          model: "Users",
+          key: "id",
+          as: "userId"
+        }
+      },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: today.toLocaleDateString("en-US", options)
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: today.toLocaleDateString("en-US", options)
       }
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Comments');
+    return queryInterface.dropTable("Comments");
   }
 };
