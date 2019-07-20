@@ -1,42 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <% include ../static/partials/head.ejs %>
-  </head>
-  <body>
 
-    <% include ../static/partials/navbar.ejs %>
+<head>
+  <% include ../static/partials/head.ejs %>
+</head>
 
-    <main class="container">
+<body>
 
-      <% include ../static/partials/messages.ejs %>
+  <% include ../static/partials/navbar.ejs %>
 
-      <h1>Sign up</h1>
+  <main class="container">
 
-      <form action="/users" method="post">
+    <% include ../static/partials/messages.ejs %>
 
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
-          <small class="text-muted" id="emailHelp">email address must be a valid address</small>
-        </div>
+    <h1>Sign up</h1>
 
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" name="password" aria-describedby="passwordHelp" placeholder="Enter password">
-          <small class="text-muted" id="passwordHelp">password must match confirmation below</small>
-        </div>
+    <form action="/users" method="post">
 
-        <div class="form-group">
-          <label for="passwordConfirmation">Password confirmation</label>
-          <input type="password" class="form-control" name="passwordConfirmation" aria-describedby="passwordHelp" placeholder="Enter password confirmation">
-        </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+        <small class="text-muted" id="emailHelp">email address must be a valid address</small>
+      </div>
 
-        <button type="submit" class="btn yellow">Sign up</button>
-      </form>
-    </main>
+      <!-- <div class="form-group">
+        <label for="email">Full Name</label>
+        <input type="text" class="form-control" name="name" aria-describedby="namelHelp" placeholder="Enter Full name">
+        <small class="text-muted" id="emailHelp">full name must be at least 5 characters long</small>
+      </div> -->
 
-    <% include ../static/partials/baseScripts.ejs %>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" aria-describedby="passwordHelp"
+          placeholder="Enter password">
+        <small class="text-muted" id="passwordHelp">password must match confirmation below</small>
+      </div>
 
-  </body>
+      <div class="form-group">
+        <label for="passwordConfirmation">Password confirmation</label>
+        <input type="password" class="form-control" name="passwordConfirmation" aria-describedby="passwordHelp"
+          placeholder="Enter password confirmation">
+      </div>
+
+      <button type="submit" class="btn yellow">Sign up</button>
+    </form>
+  </main>
+
+  <% include ../static/partials/baseScripts.ejs %>
+
+</body>
+
 </html>
