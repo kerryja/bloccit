@@ -5,7 +5,7 @@
 		<%= comment.body %>
 	</h6>
 	<small class="card-subtitle mb-2 text-muted">
-		sent by <%= comment.User.email %> on <%= comment.createdAt %>
+		sent by <%= comment.User.email %> on <%= comment.createdAt.toLocaleDateString("en-US") %>
 	</small>
 
 	<% if(currentUser && (currentUser.id === comment.userId || currentUser.isAdmin())) { %>
