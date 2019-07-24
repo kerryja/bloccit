@@ -16,13 +16,17 @@
 
 		<form action="/topics/<%= topic.id %>/update" method="post">
 			<div class="form-group">
-				<label for="title"><h5>Topic title</h5></label>
+				<label for="title">
+					<h5>Topic Title</h5>
+				</label>
 
-				<input value="<%= topic.title %>" type="text" class="form-control" name="title" aria-describedby="titleHelp"
-					placeholder="Enter Title">
+				<input value="<%= topic.title %>" type="text" class="form-control" name="title"
+					aria-describedby="titleHelp" placeholder="Enter Title">
 			</div>
 			<div class="form-group">
-				<label for="description"><h5>Description</h5></label>
+				<label for="description">
+					<h5>Description</h5>
+				</label>
 
 				<textarea rows="4" class="form-control" name="description"
 					placeholder="Enter Description"><%= topic.description %></textarea>

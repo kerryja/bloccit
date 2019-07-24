@@ -1,7 +1,6 @@
 const ApplicationPolicy = require("./application");
 
 module.exports = class TopicPolicy extends ApplicationPolicy {
-
   new() {
     return this._isAdmin();
   }
@@ -21,4 +20,4 @@ module.exports = class TopicPolicy extends ApplicationPolicy {
   destroy() {
     return this.update();
   }
-}
+};

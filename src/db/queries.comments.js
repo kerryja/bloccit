@@ -5,30 +5,27 @@ const User = require("./models").User;
 const Authorizer = require("../policies/comment");
 
 module.exports = {
-
-  createComment(newComment, callback){
+  createComment(newComment, callback) {
     return Comment.create(newComment)
-    .then((comment) => {
-      callback(null, comment);
-    })
-    .catch((err) => {
-      callback(err);
-    });
+      .then(comment => {
+        callback(null, comment);
+      })
+      .catch(err => {
+        callback(err);
+      });
   },
 
-  deleteComment(req, callback){
-    return Comment.findByPk(req.params.id)
-    .then((comment) => {
+  deleteComment(req, callback) {
+    return Comment.findByPk(req.params.id).then(comment => {
       const authorized = new Authorizer(req.user, comment).destroy();
 
-      if(authorized){
+      if (authorized) {
         comment.destroy();
-        callback(null, comment)
+        callback(null, comment);
       } else {
-        req.flash("notice", "You are not authorized to do that.")
-        callback(401)
+        req.flash("notice", "You are not authorized to do that.");
+        callback(401);
       }
-    })
+    });
   }
-
-}
+};
